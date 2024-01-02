@@ -1,5 +1,3 @@
-local HttpService = game:GetService("HttpService")
-
 local CheatFrame = Instance.new("ScreenGui")
 CheatFrame.Name = 'Cheat'
 CheatFrame.Parent = game.Players.LocalPlayer.PlayerGui
@@ -158,24 +156,3 @@ uiudim.Parent = loginbtn
 uiudim.CornerRadius = UDim.new(0,8)
 
 load()
-
-local url = "https://jsonplaceholder.typicode.com/posts/1"
-
--- Функция, выполняющая HTTP-запрос
-local function makeRequest()
-	-- Выполняем GET-запрос
-	local success, response = pcall(function()
-		return HttpService:GetAsync(url)
-	end)
-
-	-- Проверяем успешность запроса
-	if success then
-		print("HTTP запрос выполнен успешно:")
-		print(response) -- Выводим результат запроса
-	else
-		warn("Ошибка HTTP запроса:", response) -- Если есть ошибки, выводим их в консоль
-	end
-end
-
--- Вызываем функцию для выполнения запроса
-makeRequest()
